@@ -13,12 +13,15 @@
  */
 
 @import "bootstrap";
+@import "compass/css3";
 
 $tmpTogoLinkColor: #9a0622;
 
 .logo {
   margin-top: 40px;
   text-align: center;
+
+  img { @include box-shadow(rgba(#333, 0.7) 1px 1px 10px) }
 
   h2 { margin-top: 20px; color: $tmpTogoLinkColor; }
 
