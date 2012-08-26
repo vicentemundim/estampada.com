@@ -11,3 +11,16 @@
  *= require_self
  *= require_tree .
  */
+
+@import "bootstrap";
+
+$tmpTogoLinkColor: #9a0622;
+
+.logo {
+  margin-top: 40px;
+  text-align: center;
+
+  h2 { margin-top: 20px; color: $tmpTogoLinkColor; }
+
+  a { color: $tmpTogoLinkColor; }
+}
