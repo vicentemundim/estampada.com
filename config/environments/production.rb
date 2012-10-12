@@ -71,16 +71,6 @@ EstampadaCom::Application.configure do
   config.active_support.deprecation = :notify
 
   CarrierWave.configure do |config|
-    config.root = Rails.root.join('tmp')
-    config.cache_dir = 'carrierwave'
-
-    config.s3_access_key_id = ENV['AWS_ACCESS_KEY_ID']
-    config.s3_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
-    config.s3_bucket = ENV['S3_BUCKET']
-    config.s3_region = ENV['S3_REGION']
-  end
-
-  CarrierWave.configure do |config|
     config.fog_credentials = {
       provider:              'AWS',                          # required
       aws_access_key_id:     ENV['AWS_ACCESS_KEY_ID'],       # required
