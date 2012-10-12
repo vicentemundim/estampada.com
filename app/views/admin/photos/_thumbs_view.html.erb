@@ -1,0 +1,34 @@
+<ul class="sortable media-grid" data-update-url="<%= imageable_reorder_photos_path(@imageable) %>">
+  <% @imageable.photos.ordered.each do |photo| %>
+    <li id="<%= dom_id(photo) %>">
+      <%= image_tag photo.image_thumb_version.url, class: 'img-polaroid' %>
+      <span class="edit-thumb hide" role="button" title="Clique para alterar o tamanho do thumb" data-target="#<%= dom_id(photo, :modal) %>" data-toggle="modal">tamanho</span>
+    </li>
+  <% end %>
+</ul>
+
+<% @imageable.photos.ordered.each do |photo| %>
+  <div id="<%= dom_id(photo, :modal) %>" class="modal fade hide photos-modal" role="dialog">
+    <%= simple_form_for photo, url: imageable_photo_path(@imageable, photo), remote: true do |f| %>
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal" aria-hidden="true" href="#">&times;</a>
+      <h3>Escolha o tamanho da foto</h3>
+    </div>
+    <div class="modal-body">
+      <ul class="media-grid">
+        <% photo.image.versions.except(:thumb, :panel).each do |version, url| %>
+          <li>
+            <label>
+              <%= f.radio_button :thumb_version, version, id: dom_id(photo, "thumb_version_#{version}") %>
+              <%= image_tag(photo.image.send(version).url, class: "img-polaroid #{'active' if photo.thumb_version == version.to_s}") %>
+            </label>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <%= f.button :submit, class: "btn-primary" %>
+    </div>
+    <% end %>
+  </div>
+<% end %>

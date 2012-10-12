@@ -1,0 +1,13 @@
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "Estampada", admin_pages_path, class: 'brand' %>
+
+      <ul class="nav">
+        <li><%= link_to "Home", by_slug_admin_pages_path(slug: "home") %></li>
+        <li><%= link_to "Fotos", by_slug_admin_pages_path(slug: "photos") %></li>
+        <li><%= link_to "Contato", by_slug_admin_pages_path(slug: "contact") %></li>
+      </ul>
+    </div>
+  </div>
+</header>

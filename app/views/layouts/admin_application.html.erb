@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= content_for?(:title) ? yield(:title) : "Estampada" %></title>
+  <%= stylesheet_link_tag    "admin_application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container">
+  <%= render 'admin_header' %>
+  <%= render 'feedback' %>
+
+  <%= yield %>
+</div>
+
+<%= javascript_include_tag "admin_application" %>
+
+</body>
+</html>

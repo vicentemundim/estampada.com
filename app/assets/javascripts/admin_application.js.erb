@@ -1,0 +1,56 @@
+// This is a manifest file that'll be compiled into including all the files listed below.
+// Add new JavaScript/Coffee code in separate files in this directory and they'll automatically
+// be included in the compiled file accessible from http://example.com/assets/application.js
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// the compiled file.
+//
+//= require jquery
+//= require jquery_ujs
+//= require jquery-ui
+//= require fancybox
+//= require bootstrap
+
+$(document).ready(function() {
+  $("a.fancybox").fancybox();
+
+  $(".sortable").sortable({
+    revert: true,
+    scroll: true,
+    cancel: '.edit-thumb',
+    placeholder: 'placeholder',
+    forcePlaceholderSize: true,
+    update: function (event, ui) {
+      var serialized = $(this).sortable('serialize');
+      $.post($(this).attr('data-update-url'), serialized);
+    }
+  });
+
+  $(".table-sortable").sortable({
+    revert: true,
+    items: 'tr',
+    scroll: true,
+    placeholder: 'placeholder',
+    forcePlaceholderSize: true,
+    update: function (event, ui) {
+      var serialized = $(this).sortable('serialize');
+      $.post($(this).attr('data-update-url'), serialized);
+    }
+  });
+
+  $(".photos-listing .sortable").on("mouseenter", "li", function () {
+    $(this).find(".edit-thumb").show();
+  }).on("mouseleave", "li", function () {
+    $(this).find(".edit-thumb").hide();
+  }).on("click", ".edit-thumb", function () {
+    $($(this).attr('data-target')).modal('show');
+    return false
+  });
+
+  $(".modal.photos-modal").on("click", "li img", function (e) {
+    $(this).parents("ul").find("img").removeClass("active");
+    $(this).addClass("active");
+    $(this).parents("li").find('input[type=radio]').prop('checked', true);
+    e.preventDefault();
+    return false;
+  });
+});

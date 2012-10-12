@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Estampada é a sua marca de almofadas para colorir, alegrar e aconchegar sua vida</title>
-  <meta name="description" content="Sabe aquela almofada que sempre quis ter e nunca encontrou? Então, conta para a gente que a gente faz para você.">
-  <meta name="keywords" content="Almofadas, Decoração, Design de Interiores, Home Decor">
+  <title><%= t('meta.title') %></title>
+
+  <meta name="keywords" content="<%= t('meta.keywords') %>" />
+  <meta name="description" content="<%= t('meta.description') %>" />
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<%= render 'header' %>
 
 <div class="container">
   <%= yield %>
 </div>
 
+<%= render 'footer' %>
+
+<%= javascript_include_tag "application" %>
+<%= render 'google_analytics' %>
+<%= render 'facebook' %>
 </body>
 </html>

@@ -1,0 +1,107 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require fancybox
+ *= require_self
+*/
+
+@import 'app-bootstrap';
+
+body {
+  padding-top: 60px;
+}
+
+.form-stacked .image-field {
+  margin: 20px 0px 50px;
+}
+
+.tab-content { margin-bottom: 20px; }
+
+#list-view {
+  tr {
+    td.photo-caption { width: 70% }
+    td.photo-image { width: 15% }
+    td.photo-delete { width: 15% }
+  }
+}
+
+#thumbs-view {
+  ul {
+    list-style: none;
+
+    li {
+      float: left;
+      padding: 0;
+      margin: 0 0 0 20px;
+
+      &.placeholder {
+        border: 1px solid #DDDDDD;
+        border-radius: 4px;
+      }
+    }
+
+    &.sortable li {
+      cursor: move;
+      position: relative;
+      margin: 0 0 0 20px;
+
+      .edit-thumb {
+        color: #404040;
+        font-weight: bold;
+        background-color: white;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        padding: 1px 3px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.media-grid img.active {
+  border-color: #0069D6;
+}
+
+.media-grid img:hover {
+  border-color: #0069D6;
+}
+
+.modal.photos-modal {
+  width: 830px;
+  margin-left: -415px;
+
+  input[type=radio] {
+    display: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  img.active {
+    @include box-shadow(rgba(0,105,214,.25) 0px 2px 4px);
+  }
+
+  img:hover { cursor: pointer; }
+
+  .modal-body {
+    height: 420px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+}
+
+.container {
+  margin-bottom: 100px;
+}
+
+.navbar .container { margin-bottom: 0; }
+
+.container .actions .btn {
+  margin-right: 15px;
+}

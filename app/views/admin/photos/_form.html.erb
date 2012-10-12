@@ -1,0 +1,32 @@
+<fieldset>
+  <legend>Foto</legend>
+
+  <% if @photo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@photo.errors.count, "erro ocorreu", "erros ocorreram") %>:</h2>
+
+      <ul>
+        <% @photo.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="image-field">
+    <%= f.input :image %>
+    <%= f.input :image_cache, as: :hidden %>
+
+    <%= link_to @photo.image.url, class: "fancybox" do %>
+      <%= image_tag @photo.image.thumb.url %>
+    <% end if @photo.image? %>
+  </div>
+
+  <%= f.input :caption, as: :text, input_html: { rows: 5, cols: nil, class: 'span12' } %>
+
+  <div class="actions">
+    <%= f.button :submit, class: "btn-primary" %>
+
+    <%= link_to "Cancelar", @snippet.present? ? edit_admin_page_snippet_path(@page, @snippet) : admin_page_path(@page) %>
+  </div>
+</fieldset>

@@ -8,8 +8,9 @@ EstampadaCom::Application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = false
+  # Enabling serve static assets
+  config.serve_static_assets = true
+  config.static_cache_control = "public, max-age=2592000" # caches assets by 1 month
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
@@ -47,6 +48,14 @@ EstampadaCom::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
+  config.assets.precompile += %w( admin_application.js admin_application.css )
+
+  # Enabling rack-cache
+  config.action_dispatch.rack_cache = {
+    :metastore    => Dalli::Client.new,
+    :entitystore  => 'file:tmp/cache/rack/body',
+    :allow_reload => false
+  }
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
@@ -61,4 +70,24 @@ EstampadaCom::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
+  CarrierWave.configure do |config|
+    config.root = Rails.root.join('tmp')
+    config.cache_dir = 'carrierwave'
+
+    config.s3_access_key_id = ENV['AWS_ACCESS_KEY_ID']
+    config.s3_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+    config.s3_bucket = ENV['S3_BUCKET']
+    config.s3_region = ENV['S3_REGION']
+  end
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => ENV['SMTP_DOMAIN'],
+    :user_name            => ENV['SMTP_USERNAME'],
+    :password             => ENV['SMTP_PASSWORD'],
+    :authentication       => 'plain',
+    :enable_starttls_auto => true
+  }
 end

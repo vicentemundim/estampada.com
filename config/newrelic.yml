@@ -1,0 +1,35 @@
+---
+production:
+  error_collector:
+    capture_source: true
+    enabled: true
+    ignore_errors: ActionController::RoutingError
+  apdex_t: 0.5
+  ssl: false
+  monitor_mode: true
+  license_key: <%= ENV["NEW_RELIC_LICENSE_KEY"] %>
+  developer_mode: false
+  app_name: <%= ENV["NEW_RELIC_APP_NAME"] %>
+  transaction_tracer:
+    record_sql: obfuscated
+    enabled: true
+    stack_trace_threshold: 0.5
+    transaction_threshold: apdex_f
+  capture_params: false
+  log_level: info
+  disable_active_messaging: true
+  disable_cassandra_instrumentation: true
+  disable_crack: true
+  disable_curb: true
+  disable_elastic_search_instrumentation: true
+  disable_kyototycoon: true
+  disable_paperclip: true
+  disable_resque: true
+  disable_redis: true
+  disable_riak_client: true
+  disable_ripple: true
+  disable_sinatra_template: true
+  disable_thinking_sphinx: true
+  disable_typhoeus: true
+  disable_ultrasphinx: true
+  disable_workling: true

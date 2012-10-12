@@ -13,26 +13,28 @@ group :assets do
   gem 'bootstrap-sass'
   gem 'compass-rails'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails'
+gem 'fancybox-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
+# Use thin as the app server
 gem 'thin'
 
-# Deploy with Capistrano
-# gem 'capistrano'
-
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
+
+# Memcache client gem
+gem 'dalli'
+
+gem 'RedCloth'
+
+gem 'carrierwave'
+gem 'carrierwave-mongoid', require: 'carrierwave/mongoid', git: 'git://github.com/jnicklas/carrierwave-mongoid.git', branch: 'mongoid-3.0'
+
+gem 'rmagick'
+
+gem 'newrelic_rpm'
+
+gem 'simple_form'

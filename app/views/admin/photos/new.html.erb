@@ -1,0 +1,3 @@
+<%= simple_form_for @photo, url: imageable_photos_path(@imageable), html: {multipart: true} do |f| %>
+  <%= render partial: 'form', locals: { f: f } %>
+<% end %>

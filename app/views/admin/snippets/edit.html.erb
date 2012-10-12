@@ -1,0 +1,14 @@
+<%= simple_form_for(@snippet, url: admin_page_snippet_path(@page, @snippet)) do |f| %>
+  <fieldset>
+    <legend><%= t "sections.#{@snippet.section}" %></legend>
+
+    <%= f.input :body, as: :text, input_html: { cols: nil, rows: 10, class: :span12 } %>
+
+    <div class="actions">
+      <%= f.button :submit, class: 'btn-primary' %>
+    </div>
+  </fieldset>
+<% end %>
+
+<%= render partial: 'admin/photos/listing' %>
+

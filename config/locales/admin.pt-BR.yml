@@ -1,0 +1,23 @@
+pt-BR:
+  admin:
+    pages:
+      common:
+        photos: 'Fotos'
+      index:
+        title: Páginas
+        slug: Identificador
+      show:
+        snippets: Textos
+        section: Seção
+        status:
+          title: Status
+          change: alterar status
+          active: ativo
+          inactive: inativo
+
+  sections:
+    main: "Principal"
+  admin_pages:
+    home: "Home"
+    photos: "Fotos"
+    contact: "Contato"

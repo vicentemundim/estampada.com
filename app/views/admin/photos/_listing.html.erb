@@ -1,0 +1,22 @@
+<h3><%= t('admin.pages.common.photos') %></h3>
+
+<% if @imageable.photos.present? %>
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#list-view" data-toggle="tab">Listagem</a></li>
+    <li><a href="#thumbs-view" data-toggle="tab">Thumbnails</a></li>
+  </ul>
+
+  <div class="photos-listing tab-content">
+    <div id="list-view" class="tab-pane active">
+      <%= render partial: 'admin/photos/list_view' %>
+    </div>
+
+    <div id="thumbs-view" class="tab-pane">
+      <%= render partial: 'admin/photos/thumbs_view' %>
+    </div>
+  </div>
+<% else %>
+  <p>Nenhuma foto cadastrada</p>
+<% end %>
+
+<%= link_to "Adicionar Foto", new_imageable_photo_path(@imageable), class: "btn clear" %>

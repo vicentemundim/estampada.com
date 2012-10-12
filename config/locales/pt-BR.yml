@@ -1,0 +1,36 @@
+pt-BR:
+  time:
+    formats:
+      custom: "%d/%m/%Y"
+      custom_with_time: "%d/%m/%Y às %H:%M"
+      custom_time: "%H:%M"
+  helpers:
+    submit:
+      create: "Adicionar %{model}"
+      update: "Atualizar %{model}"
+  meta:
+    title: 'Estampada é a sua marca de almofadas para colorir, alegrar e aconchegar sua vida'
+    keywords: 'Sabe aquela almofada que sempre quis ter e nunca encontrou? Então, conta para a gente que a gente faz para você.'
+    description: 'Almofadas, Decoração, Design de Interiores, Home Decor'
+  header:
+    logo:
+      title: ''
+  footer:
+    title: ''
+    contacts:
+      title: 'Mantenha contato'
+      twitter: 'Siga-nos no Twitter'
+      facebook: 'Adicione no Facebook'
+  menu:
+    home:
+      title: 'Home'
+    photos:
+      title: 'Fotos'
+    contact:
+      title: 'Contato'
+  pages:
+    home:
+    photos:
+      title: 'Fotos'
+    contact:
+      title: 'Contato'
