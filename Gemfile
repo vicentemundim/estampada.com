@@ -22,8 +22,10 @@ gem 'fancybox-rails'
 # Use thin as the app server
 gem 'thin'
 
-# To use debugger
-gem 'debugger'
+group :development, :test do
+  # To use debugger
+  gem 'debugger'
+end
 
 # Memcache client gem
 gem 'dalli'
