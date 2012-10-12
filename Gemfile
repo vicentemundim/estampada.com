@@ -32,6 +32,8 @@ gem 'dalli'
 
 gem 'RedCloth'
 
+gem 'fog'
+
 gem 'carrierwave'
 gem 'carrierwave-mongoid', require: 'carrierwave/mongoid', git: 'git://github.com/jnicklas/carrierwave-mongoid.git', branch: 'mongoid-3.0'
 

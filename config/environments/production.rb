@@ -52,9 +52,9 @@ EstampadaCom::Application.configure do
 
   # Enabling rack-cache
   config.action_dispatch.rack_cache = {
-    :metastore    => Dalli::Client.new,
-    :entitystore  => 'file:tmp/cache/rack/body',
-    :allow_reload => false
+    metastore:    Dalli::Client.new,
+    entitystore:  'file:tmp/cache/rack/body',
+    allow_reload: false
   }
 
   # Disable delivery errors, bad email addresses will be ignored
@@ -80,14 +80,14 @@ EstampadaCom::Application.configure do
     config.s3_region = ENV['S3_REGION']
   end
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :domain               => ENV['SMTP_DOMAIN'],
-    :user_name            => ENV['SMTP_USERNAME'],
-    :password             => ENV['SMTP_PASSWORD'],
-    :authentication       => 'plain',
-    :enable_starttls_auto => true
-  }
+  CarrierWave.configure do |config|
+    config.fog_credentials = {
+      provider:              'AWS',                          # required
+      aws_access_key_id:     ENV['AWS_ACCESS_KEY_ID'],       # required
+      aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']    # required
+    }
+    config.fog_directory  = ENV['S3_BUCKET']                        # required
+    config.fog_public     = false                                   # optional, defaults to true
+    config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
+  end
 end
