@@ -14,7 +14,7 @@ pt-BR:
     description: 'Almofadas, Decoração, Design de Interiores, Home Decor'
   header:
     logo:
-      title: ''
+      title: 'Estampada é a sua marca de almofadas para colorir, alegrar e aconchegar sua vida'
   footer:
     title: ''
     contacts:
@@ -24,13 +24,26 @@ pt-BR:
   menu:
     home:
       title: 'Home'
-    photos:
-      title: 'Fotos'
+    us:
+      title: 'Nós duas'
+    pillow_products:
+      title: 'Almofadaria'
+    orders:
+      title: 'Encomendas'
+    shop:
+      title: 'Loja'
     contact:
       title: 'Contato'
   pages:
     home:
-    photos:
-      title: 'Fotos'
+      title: 'Home'
+    us:
+      title: 'Nós duas'
+    pillow_products:
+      title: 'Almofadaria'
+    orders:
+      title: 'Encomendas'
+    shop:
+      title: 'Loja'
     contact:
       title: 'Contato'

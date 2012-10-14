@@ -8,7 +8,7 @@ class Admin::SnippetsController < Admin::ApplicationController
     @page = Page.find(params[:page_id])
     @imageable = @snippet = @page.snippets.find(params[:id])
 
-    if @snippet.update(params[:snippet])
+    if @snippet.update_attributes(params[:snippet])
       redirect_to admin_page_path(@page), :notice => 'Snippet atualizado com sucesso.'
     else
       render :action => "edit"

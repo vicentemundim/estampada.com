@@ -19,10 +19,19 @@ end
 Page.delete_all
 
 #### Home Page
-create_page_with(:home, [:main])
+create_page_with(:home, [:left_highlight, :right_highlight])
 
-#### Photos Page
-create_page_with(:photos, [:main])
+#### Us Page
+create_page_with(:us, [:main])
+
+#### Products Page
+create_page_with(:pillow_products, [:main])
+
+#### Orders Page
+create_page_with(:orders, [:main])
+
+#### Shop Page
+create_page_with(:shop, [:main])
 
 #### Contact Page
 create_page_with(:contact, [:main])

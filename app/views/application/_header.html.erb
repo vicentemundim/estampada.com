@@ -1,1 +1,32 @@
-<!-- header -->
+<header class="container">
+  <div class="row">
+    <div class="logo span2">
+      <%= link_to '', root_path, title: t('header.logo.title') %>
+    </div>
+
+    <div class="navbar span10">
+      <div class="navbar-inner">
+        <ul class="nav">
+          <li>
+            <%= link_to t('menu.home.title'), root_path, class: 'home' %>
+          </li>
+          <li>
+            <%= link_to t('menu.us.title'), us_path, class: 'us' %>
+          </li>
+          <li>
+            <%= link_to t('menu.pillow_products.title'), pillow_products_path, class: 'products' %>
+          </li>
+          <li>
+            <%= link_to t('menu.orders.title'), orders_path, class: 'orders' %>
+          </li>
+          <li>
+            <%= link_to t('menu.shop.title'), shop_path, class: 'shop' %>
+          </li>
+          <li>
+            <%= link_to t('menu.contact.title'), contact_path, class: 'contact' %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

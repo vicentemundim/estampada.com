@@ -8,22 +8,116 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require slider.min
  *= require_self
- *= require_tree .
  */
+
+$sansFontFamily:        Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$serifFontFamily:       Verdana, Georgia, "Times New Roman", Times, serif !default;
 
 @import "app-bootstrap";
 @import "compass/css3";
 
-$tmpTogoLinkColor: #9a0622;
+$bodyBackgroundColor: #e2e5ce;
+$contentBackgroundColor: #fff;
 
-.logo {
-  margin-top: 40px;
-  text-align: center;
+body {
+  background-color: $bodyBackgroundColor;
+}
 
-  img { @include box-shadow(rgba(#333, 0.7) 1px 1px 10px) }
+.outer-container {
+  background-color: $contentBackgroundColor;
+  width: 980px;
+  margin: 0 auto;
+}
 
-  h2 { margin-top: 20px; color: $tmpTogoLinkColor; }
+header {
+  padding: 40px 0;
 
-  a { color: $tmpTogoLinkColor; }
+  .logo a {
+    display: inline-block;
+    width: 140px;
+    height: 135px;
+    background: transparent url(/assets/estampada-140x135.jpg) no-repeat 0 0;
+  }
+
+  .navbar {
+    margin-top: 40px;
+    text-transform: uppercase;
+
+    .navbar-inner {
+      background: none;
+      padding: 0;
+
+      @include box-shadow(0 0 0);
+
+      @include border-radius(0);
+
+      border: 2px solid #ccc;
+      border-left-width: 0;
+      border-right-width: 0;
+
+      .home, .home:hover, .home:active             { color: #a3b794; }
+      .us, .us:hover, .us:active                   { color: #ad95ad; }
+      .products, .products:hover, .products:active { color: #ffd0c0; }
+      .orders, .orders:hover, .orders:active       { color: #e3a8a2; }
+      .shop, .shop:hover, .shop:active             { color: #aac29e; }
+      .contact, .contact:hover, .contact:active    { color: #ca6a9a; }
+
+      a {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+footer {
+  border-top: 1px solid #ccc;
+
+  height: 60px;
+
+  .outer-container { height: 100%; }
+
+  ul {
+    list-style: none;
+    margin: 20px 0 0 0;
+
+    li {
+      margin: 0 0 0 20px;
+      float: left;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+#painel {
+  height: 245px;
+  background-color: $bodyBackgroundColor;
+  padding-top: 20px;
+}
+
+.fotoPainel {
+  height: 225px;
+  float: left;
+
+  &.first { margin-left: 0; }
+}
+
+.slider.no-control {
+  background-color: inherit;
+  color: #333;
+  height: 260px;
+
+  .loader .spinner { background: url(loader.gif) no-repeat; }
+}
+
+.highlights {
+  margin: 50px 0;
+
+  .span6 {
+    padding: 0 60px;
+  }
 }

@@ -22,7 +22,10 @@ EstampadaCom::Application.routes.draw do
   end
 
   match '/' => 'pages#index', as: :home
-  match '/photos' => 'pages#photos', as: :photos
+  match '/us' => 'pages#us', as: :us
+  match '/products' => 'pages#products', as: :pillow_products
+  match '/orders' => 'pages#orders', as: :orders
+  match '/shop' => 'pages#shop', as: :shop
   match '/contact' => 'pages#contact', as: :contact
 
   root to: 'pages#index'
