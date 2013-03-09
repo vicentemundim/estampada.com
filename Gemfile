@@ -1,19 +1,19 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
 
-gem 'rails', '3.2.8'
+gem 'rails'
 
 gem 'mongoid'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails'
+  gem 'coffee-rails'
   gem 'bootstrap-sass'
   gem 'compass-rails'
 
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'
 end
 
 gem 'jquery-rails'
@@ -35,7 +35,7 @@ gem 'RedCloth'
 gem 'fog'
 
 gem 'carrierwave'
-gem 'carrierwave-mongoid', require: 'carrierwave/mongoid', git: 'git://github.com/jnicklas/carrierwave-mongoid.git', branch: 'mongoid-3.0'
+gem 'carrierwave-mongoid', require: 'carrierwave/mongoid'
 
 gem 'rmagick'
 

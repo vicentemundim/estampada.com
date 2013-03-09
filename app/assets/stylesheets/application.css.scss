@@ -19,10 +19,11 @@ $serifFontFamily:       Verdana, Georgia, "Times New Roman", Times, serif !defau
 @import "compass/css3";
 
 $bodyBackgroundColor: #e2e5ce;
-$contentBackgroundColor: #fff;
+$contentBackgroundColor: rgba(255, 255, 255, 0.8);
 
 body {
   background-color: $bodyBackgroundColor;
+  background: $bodyBackgroundColor image-url('fundo-site-02.jpg') repeat left top;
 }
 
 .outer-container {
@@ -38,7 +39,7 @@ header {
     display: inline-block;
     width: 140px;
     height: 135px;
-    background: transparent url(/assets/estampada-140x135.jpg) no-repeat 0 0;
+    background: transparent image-url('estampada-140x135.jpg') no-repeat 0 0;
   }
 
   .navbar {
@@ -72,11 +73,12 @@ header {
 }
 
 footer {
-  border-top: 1px solid #ccc;
-
   height: 60px;
 
-  .outer-container { height: 100%; }
+  .outer-container {
+    height: 100%;
+    border-top: 1px solid #ccc;
+  }
 
   ul {
     list-style: none;
@@ -111,7 +113,7 @@ footer {
   color: #333;
   height: 260px;
 
-  .loader .spinner { background: url(loader.gif) no-repeat; }
+  .loader .spinner { background: image-url('loader.gif') no-repeat; }
 }
 
 .highlights {
