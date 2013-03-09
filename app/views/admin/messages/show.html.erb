@@ -1,0 +1,21 @@
+<h1>Mensagems</h1>
+
+<p>
+  Enviada em: <%= l @message.created_at, :format => :custom %>
+</p>
+
+<p>
+  Nome: <%= @message.name %>
+</p>
+
+<p>
+  E-mail: <%= @message.email %>
+</p>
+
+<p>
+  Mensagem: <%= @message.message %>
+</p>
+
+<p>
+  <%= link_to 'Voltar', admin_messages_path %>
+</p>

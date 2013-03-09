@@ -1,0 +1,26 @@
+<h1>Mensagens</h1>
+
+<% unless @messages.empty? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <% @messages.each do |message| %>
+      <tr>
+        <td><%= message.name %></td>
+        <td><%= message.email %></td>
+        <td><%= link_to "exibir", admin_message_path(message) %></td>
+        <td><%= link_to "remover", admin_message_path(message), :method => :delete, :confirm => "Você tem certeza?" %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  Nenhuma mensagem
+<% end %>
