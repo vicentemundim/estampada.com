@@ -17,7 +17,12 @@ pt-BR:
 
   sections:
     main: "Principal"
+    left_highlight: Destaque à esquerda
+    right_highlight: Destaque à direita
   admin_pages:
     home: "Home"
-    photos: "Fotos"
+    us: "Nós duas"
+    products: "Almofadaria"
+    orders: "Encomendas"
+    shop: "Loja"
     contact: "Contato"

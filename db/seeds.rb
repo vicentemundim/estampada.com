@@ -25,7 +25,7 @@ create_page_with(:home, [:left_highlight, :right_highlight])
 create_page_with(:us, [:main])
 
 #### Products Page
-create_page_with(:pillow_products, [:main])
+create_page_with(:products, [:main])
 
 #### Orders Page
 create_page_with(:orders, [:main])

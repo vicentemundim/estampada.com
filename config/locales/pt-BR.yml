@@ -26,7 +26,7 @@ pt-BR:
       title: 'Home'
     us:
       title: 'Nós duas'
-    pillow_products:
+    products:
       title: 'Almofadaria'
     orders:
       title: 'Encomendas'
@@ -39,7 +39,7 @@ pt-BR:
       title: 'Home'
     us:
       title: 'Nós duas'
-    pillow_products:
+    products:
       title: 'Almofadaria'
     orders:
       title: 'Encomendas'

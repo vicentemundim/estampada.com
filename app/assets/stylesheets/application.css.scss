@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require slider.min
+ *= require fancybox
  *= require_self
  */
 
@@ -121,5 +122,23 @@ footer {
 
   .span6 {
     padding: 0 60px;
+  }
+}
+
+.photos {
+  margin: 20px 0;
+
+  .photo {
+    display: block;
+    float: left;
+    margin: 0 6px 6px 0;
+  }
+
+  img {
+    border: 2px solid #fff;
+  }
+
+  a:hover img {
+    border: 2px solid #006699;
   }
 }
