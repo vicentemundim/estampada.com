@@ -1,0 +1,9 @@
+Contato recebido em <%= l @message.created_at, :format => :custom_with_time %>
+===============================================
+
+Nome: <%= @message.name %>
+
+E-mail: <%= @message.email %>
+
+Mensagem:
+<%= @message.message %>

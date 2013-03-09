@@ -7,9 +7,9 @@ pt-BR:
       mark: '*'
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
-      # html: '<abbr title="required">*</abbr>'
+      html: '<span title="obrigatório">*</span>'
     error_notification:
-      default_message: "Por favor, revise os erros abaixo:"
+      default_message: "Por favor, verifique os erros abaixo:"
     # Labels and hints examples
     # labels:
     #   defaults:

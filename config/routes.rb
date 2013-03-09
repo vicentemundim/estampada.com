@@ -28,5 +28,7 @@ EstampadaCom::Application.routes.draw do
   match '/shop' => 'pages#shop', as: :shop
   match '/contact' => 'pages#contact', as: :contact
 
+  resources :messages, only: [:create]
+
   root to: 'pages#index'
 end

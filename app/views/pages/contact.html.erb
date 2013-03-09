@@ -1,0 +1,31 @@
+<div class="container">
+  <h2><%= t("pages.#{@page.slug}.title") %></h2>
+
+  <div class="main-content">
+    <%= simple_form_for(@message, html: { class: 'form-horizontal' }) do |f| %>
+
+      <% if flash[:notice] || flash[:alert] %>
+        <div class="alert <%= flash[:alert].present? ? 'alert-error' : 'alert-success' %>">
+          <%= flash[:notice] || flash[:alert] %>
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+        </div>
+      <% end %>
+
+      <fieldset>
+        <legend><%= t('pages.contact.form.legend') %></legend>
+
+        <%= raw @page.snippets.section(:main).rendered_body %>
+
+        <%= f.input :name, input_html: { class: 'span6', autofocus: true } %>
+        <%= f.input :email, input_html: { class: 'span6' } %>
+        <%= f.input :message, as: :text, input_html: { class: 'span6' } %>
+      </fieldset>
+
+      <div class="control-group">
+        <div class="controls">
+          <%= f.submit class: 'btn btn-success' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

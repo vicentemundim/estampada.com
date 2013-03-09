@@ -47,3 +47,11 @@ pt-BR:
       title: 'Loja'
     contact:
       title: 'Contato'
+      form:
+        legend: "Escreva sua mensagem"
+      notice: Mensagem enviada com sucesso! Muito obrigado!
+      alert: "Atenção! Não foi possível enviar a mensagem, verifique os erros abaixo."
+  helpers:
+    submit:
+      message:
+        create: "Enviar mensagem"

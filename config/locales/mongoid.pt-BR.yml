@@ -3,11 +3,16 @@ pt-BR:
     models:
       page: "Página"
       photo: "Foto"
+      message: Mensagem
       snippet: "Texto"
     attributes:
       page:
         slug: "Identificador"
         snippets: "Textos"
+      message:
+        name: Nome
+        email: Email
+        message: Mensagem
       photo:
         order: "Ordenação"
         caption: "Legenda"

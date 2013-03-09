@@ -2,7 +2,7 @@
 
 class PagesController < ApplicationController
   def index
-    @page = Page.from_slug(:home)
+    load_page(:home)
   end
 
   def us
@@ -22,12 +22,17 @@ class PagesController < ApplicationController
   end
 
   def contact
-    render_page(:contact)
+    @message = Message.new
+    load_page(:contact)
   end
 
   private
     def render_page(slug)
-      @page = Page.from_slug(slug)
+      load_page(slug)
       render 'page'
+    end
+
+    def load_page(slug)
+      @page = Page.from_slug(slug)
     end
 end
