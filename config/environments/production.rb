@@ -51,10 +51,15 @@ EstampadaCom::Application.configure do
   config.assets.precompile += %w( admin_application.js admin_application.css )
 
   # Enabling rack-cache
+  cache = Dalli::Client.new((ENV["MEMCACHIER_SERVERS"] || '').split(","), {
+    username: ENV["MEMCACHIER_USERNAME"],
+    password: ENV["MEMCACHIER_PASSWORD"]
+  })
+
   config.action_dispatch.rack_cache = {
-    metastore:    Dalli::Client.new,
-    entitystore:  'file:tmp/cache/rack/body',
-    allow_reload: false
+    :metastore    => cache,
+    :entitystore  => 'file:tmp/cache/rack/body',
+    :allow_reload => false
   }
 
   # Disable delivery errors, bad email addresses will be ignored
